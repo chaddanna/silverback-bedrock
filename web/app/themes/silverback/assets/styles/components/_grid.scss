@@ -1,0 +1,45 @@
+// Grid system
+.main {
+  @include make-sm-column($main-sm-columns);
+  
+  .sidebar-primary & {
+    @include make-sm-column($main-sm-columns - $sidebar-sm-columns);
+  }
+}
+.sidebar {
+  @include make-sm-column($sidebar-sm-columns);
+}
+
+.container {
+  display: block;
+  padding: 0 2.5rem;
+}
+
+.row {
+  display: block;
+}
+
+.col {
+  display: inline-block;
+
+  &.col-3 {
+    width: 30%;
+    margin: 0 1.5%;
+
+    &.no-gutter {
+      width: 33.33%;
+      float: left;
+      margin: 0;
+    }
+  }
+
+  &.col-2 {
+    width: 45%;
+    margin: 0 2.5%;
+
+    &.no-gutter {
+      width: 50%;
+      margin: 0;
+    }
+  }
+}
