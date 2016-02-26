@@ -25,7 +25,6 @@ footer {
         border: 0;
         padding: 0;
   	    width: 95%;
-  	    margin: 0 auto;
       }
 
       label {
@@ -55,13 +54,15 @@ footer {
         width: 92%;
       }
 
-      button {
+      input[type="submit"] {
         background: $secondary-color;
         border: 0.1em solid $secondary-color;
         border-radius: 0.4em;
         color: $primary-color;
         font-size: 1.25rem;
+  		  margin: 3%;
         padding: 0.2em 0;
+        width: 91%;
         -webkit-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
         -moz-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
         -o-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
@@ -72,9 +73,26 @@ footer {
         transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
 
         &:hover {
-          background: $secondary-color;
-          border: 0.1em solid $secondary-color;
+          background: lighten($secondary-color, 5%);
+          border: 0.1em solid lighten($secondary-color, 5%);
         }
+      }
+    }
+
+    .wpcf7-response-output {
+      width: 100% !important;
+      position: fixed;
+      bottom: 0;
+      float: none !important;
+      margin: 0 auto !important;
+      left: 0;
+
+      &.wpcf7-mail-sent-ok{
+        background: #398f14;
+      }
+
+      &.wpcf7-validation-errors{
+        background: #f7e700;
       }
     }
   }
