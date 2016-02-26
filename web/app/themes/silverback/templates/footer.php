@@ -1,9 +1,3 @@
-<!--<footer class="content-info">
-  <div class="container">
-    <?php dynamic_sidebar('sidebar-footer'); ?>
-  </div>
-</footer>-->
-
 <footer id="footer">
   <section id="contact">
     <h2>Get in Touch Today</h2>
@@ -36,4 +30,11 @@
     </form>
       <div class="clearfix"></div>
   </section>
+
+  <?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
+    <div class="container">
+      <?php dynamic_sidebar('sidebar-footer'); ?>
+    </div>
+  <?php endif; ?>
+
 </footer>
