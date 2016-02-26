@@ -2,7 +2,7 @@
   display: none;
 }
 
-#home {
+#hero {
   background: url('../img/hero-background.png') no-repeat top center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -19,7 +19,7 @@
   }
 }
 
-#hero {
+.hero-content {
   padding: 6.25rem 1.25rem 10rem 1.25rem;
   text-align: center;
 

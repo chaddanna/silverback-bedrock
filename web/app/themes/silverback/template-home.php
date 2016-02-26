@@ -6,6 +6,17 @@
 
 <?php get_template_part('templates/page', 'header'); ?>
   <main id="main">
+    <section id="hero">
+      <div class="hero-content">
+        <h1>Silverback Advertising is a full-service automotive ad agency.</h1>
+        <a href="#contact">Work With Us</a>
+      </div>
+    </section>
+
+    <div class="trim">
+      <img src="<?= get_template_directory_uri(); ?>/dist/images/trim.png" alt="">
+    </div>
+
     <section id="services">
       <div class="container">
         <div class="row">
