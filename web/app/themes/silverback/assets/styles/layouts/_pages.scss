@@ -185,7 +185,7 @@
   h5 {
     margin-top: 0;
     margin-bottom: 0;
-    color: saturate($primary-color);
+    color: $blue;
   }
 }
 
@@ -223,7 +223,7 @@
     }
 
     p {
-      color: saturate($primary-color);
+      color: $blue;
       text-transform: uppercase;
     }
 
