@@ -19,7 +19,7 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-        
+
         function onScroll( event ){
             var scrollPos = $( document ).scrollTop();
             $( "#nav a" ).each( function() {
@@ -84,8 +84,8 @@
           $(".video-placeholder").html(video);
         });
 
-        $('.video-placeholder').click(function(){
-          video = '<iframe width="100%" height="440px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen src="'+ $(this).attr('data-video') +'?rel=0&autoplay=1"></iframe>';
+        $('.video-placeholder, .reel-cta').click(function(){
+          video = '<iframe width="100%" height="440px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen src="'+ $(".video-placeholder").attr('data-video') +'?rel=0&autoplay=1"></iframe>';
           $(".video-placeholder").html(video);
         });
 
