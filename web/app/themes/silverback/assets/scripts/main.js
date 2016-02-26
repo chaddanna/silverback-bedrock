@@ -19,6 +19,25 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        
+        function onScroll( event ){
+            var scrollPos = $( document ).scrollTop();
+            $( "#nav a" ).each( function() {
+                var currLink = $( this );
+                var refElement = $( currLink.attr( "href" ) );
+                if ( refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos ) {
+                    $( "#nav a" ).removeClass( "active" );
+                    currLink.addClass( "active" );
+                }
+            });
+            if( $( document ).scrollTop() > 1 ) {
+              $( ".nav-container" ).addClass( "nav-background" );
+            }
+            else {
+              $( ".nav-container" ).removeClass( "nav-background" );
+            }
+        }
+
         //scroll adjust active menu item
         $( document ).ready( function() {
             $( document ).on("scroll", onScroll);
@@ -44,24 +63,6 @@
                 });
             });
         });
-
-        function onScroll( event ){
-            var scrollPos = $( document ).scrollTop();
-            $( "#nav a" ).each( function() {
-                var currLink = $( this );
-                var refElement = $( currLink.attr( "href" ) );
-                if ( refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos ) {
-                    $( "#nav a" ).removeClass( "active" );
-                    currLink.addClass( "active" );
-                }
-            });
-            if( $( document ).scrollTop() > 1 ) {
-              $( ".nav-container" ).addClass( "nav-background" );
-            }
-            else {
-              $( ".nav-container" ).removeClass( "nav-background" );
-            }
-        }
 
         //mobile menu button clicks
         $( ".menu-btn" ).click(function() {
