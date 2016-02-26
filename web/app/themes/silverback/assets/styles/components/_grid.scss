@@ -1,7 +1,7 @@
 // Grid system
 .main {
   @include make-sm-column($main-sm-columns);
-  
+
   .sidebar-primary & {
     @include make-sm-column($main-sm-columns - $sidebar-sm-columns);
   }
@@ -13,6 +13,7 @@
 .container {
   display: block;
   padding: 0 2.5rem;
+  width: auto !important;
 }
 
 .row {
