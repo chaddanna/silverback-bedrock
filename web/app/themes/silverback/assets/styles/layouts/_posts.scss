@@ -5,6 +5,9 @@
     color: $primary-color;
     margin-bottom: 5.625rem;
     text-align: center;
+    @include respond-to(handhelds) {
+      margin-bottom: 10px;
+    }
   }
 
   .blog-item {

@@ -18,19 +18,21 @@ footer {
   		  width: 44%;
   		  margin: 3%;
   		  float: left;
+        @include respond-to(handhelds) {
+      	  width: 100%;
+      	  margin: 0;
+      	  float: none;
+        }
   	  }
-
-      label, textarea, button {
-        display: block;
-        border: 0;
-        padding: 0;
-  	    width: 95%;
-      }
-
+      
       label {
+        border: 0;
         color: $white;
+        display: block;
         font-size: 1.25rem;
+        padding: 0;
         text-align: left;
+  	    width: 95%;
       }
 
       input {
@@ -41,6 +43,10 @@ footer {
         margin-bottom: 0.625em;
         padding: 2% 4%;
         width: 92%;
+        @include respond-to(handhelds) {
+          width: 100%;
+          padding: 2% 0%;
+        }
       }
 
       textarea {
@@ -52,6 +58,9 @@ footer {
         min-height: 5.65em;
         padding: 2% 4%;
         width: 92%;
+        @include respond-to(handhelds) {
+          width: 100%;
+        }
       }
 
       input[type="submit"] {
@@ -71,6 +80,10 @@ footer {
         -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
         -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
         transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        @include respond-to(handhelds) {
+      	  width: 100%;
+          margin: 0;
+        }
 
         &:hover {
           background: lighten($secondary-color, 5%);
