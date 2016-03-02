@@ -11,6 +11,10 @@
   -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
   -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
   transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+  @include respond-to(medium-screens) {
+    top: 0;
+    background: rgb(64, 71, 112);
+  }
 
   &.nav-background {
     background: $primary-color;
@@ -25,6 +29,31 @@
     transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
   }
 
+  .menu-btn {
+    position: absolute;
+    padding: 0.875rem 0.625rem;
+    right: 0;
+
+    i {
+      color: rgb(242, 255, 203);
+      font-size: 20px;
+      border: 1px solid rgba(242, 255, 203, 0.4);
+      padding: 0.3125rem 0.5rem;
+      -webkit-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      -moz-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      -o-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      -webkit-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    }
+    &:hover i, &.active i{
+      background: rgba(242, 255, 203, 0.8);
+      color: rgb(44, 51, 92);
+    }
+  }
+
   #nav {
     text-align: center;
     width: 100%;
@@ -37,10 +66,25 @@
     -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
     -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
     transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    @include respond-to(medium-screens) {
+      top: 0;
+      background: rgb(54, 61, 102);
+      position: fixed;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      -moz-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      -o-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      -webkit-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    }
 
     a {
       border-bottom: 0.071em solid rgba(242,255,203,0);
-      color:$secondary-color;
+      color: $secondary-color;
       font-family: 'Lato', sans-serif;
       font-size: 0.875rem;
       font-weight: 300;
@@ -55,15 +99,29 @@
       -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
       -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
       transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+      @include respond-to(medium-screens) {
+        padding: 2%;
+        width: 96%;
+        display: block;
+        border-bottom: none;
+      }
 
-      &:hover, &.active {
+      &.active, &:hover {
         border-bottom: 0.071em solid rgba(242,255,203,1);
         color:lighten($secondary-color, 10%);
+        @include respond-to(medium-screens) {
+          border-bottom: none;
+          background: rgb(44, 51, 92);
+        }
       }
     }
 
     img {
       padding: 0.75rem 0.9375rem;
+      @include respond-to(medium-screens) {
+        display: none;
+        padding: 10px;
+      }
     }
   }
 }

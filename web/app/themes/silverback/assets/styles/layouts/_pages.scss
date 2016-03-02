@@ -1,11 +1,10 @@
-.mobile-visible {
-  display: none;
-}
-
 #hero {
   background-color: $primary-color;
   padding-top:2.625rem;
   position: relative;
+  @include respond-to(medium-screens) {
+    padding: 2.25rem 1.25rem 10rem 1.25rem;
+  }
 
   .trim, .trim img {
     width: 100%;
@@ -19,7 +18,7 @@
   text-align: center;
 
   h1 {
-    color: rgb(255, 255, 255);
+    color: $white;
     max-width: 51.25rem;
     margin: 1em auto;
   }
@@ -51,6 +50,9 @@
 #services {
   padding-top: 6em;
   padding-bottom: 6em;
+  @include respond-to(handhelds) {
+    padding: 20px 0;
+  }
 
   .col {
     text-align: center;
@@ -77,12 +79,31 @@
   .content {
     width: 25%;
     float: left;
+    @include respond-to(handhelds) {
+      width: 100%;
+    }
+    @include respond-to(wide-screens) {
+      width: 50%;
+    }
 
     div {
       padding: 1.625rem 2.813rem 0 2.813rem;
+      @include respond-to(medium-screens) {
+        padding: 1.25rem 1.563rem 0 1.563rem;
+      }
+      @include respond-to(wide-screens) {
+        padding: 2.5rem 2.188rem 0 2.188rem;
+      }
     }
 
-    h2, p {
+    h2 {
+      color: $white;
+      @include respond-to(wide-screens) {
+        margin-bottom: 0.625rem;
+      }
+    }
+
+    p {
       color: $white;
     }
 
@@ -116,6 +137,10 @@
     display: inline-block;
     float: left;
     width: 75%;
+    @include respond-to(handhelds) {
+      float: none;
+      width: 100%;
+    }
 
     img {
       width: 100%;
@@ -183,9 +208,21 @@
         -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
         -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
         transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        @include respond-to(handhelds) {
+          display: none;
+        }
+        @include respond-to(medium-screens) {
+          height: 50%;
+        }
 
         h3, h4 {
           margin: 0;
+        }
+
+        h5 {
+          @include respond-to(handhelds) {
+            display: none;
+          }
         }
       }
     }
@@ -196,6 +233,9 @@
   background: $secondary-color;
   padding: 5.625rem 15rem;
   text-align: center;
+  @include respond-to(handhelds) {
+    padding: 2.5rem;
+  }
 
   h4 {
     margin-bottom: 0;
@@ -281,9 +321,16 @@
 
 #locations {
   margin-top: 6.25rem;
+  @include respond-to(medium-screens) {
+	  background: white;
+	  padding: 40px 0;
+  }
 
   .location-item {
     position: relative;
+    @include respond-to(medium-screens) {
+  	  margin: 20px 0;
+    }
 
     .location-meta {
       color: rgb(255, 255, 255);
@@ -297,18 +344,54 @@
       bottom: 0;
       right: 0;
       z-index: 9;
+      @include respond-to(handhelds) {
+        height: 82%;
+      }
+      @include respond-to(medium-screens) {
+        color: $primary-color;
+        height: auto;
+        position: static;
+      }
+      @include respond-to(wide-screens) {
+        height: 90%;
+      }
 
       h3 {
         margin-bottom: 0;
+      }
+
+      a {
+        border: 0.125em solid rgb(65,71,112);
+        border-radius: 0.5em;
+        background: rgb(65,71,112);
+        color: white;
+        display: inline-block;
+        font-size: 1rem;
+        padding: 0.5em 2.375em;
+        text-decoration: none;
+        -webkit-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        -moz-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        -o-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        -webkit-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
       }
     }
 
     figure {
       overflow: hidden;
       max-height: 440px;
+      @include respond-to(medium-screens) {
+        max-height: 250px;
+      }
 
       img {
         width: 100%;
+        @include respond-to(medium-screens) {
+          margin-top: -90px;
+        }
       }
     }
   }

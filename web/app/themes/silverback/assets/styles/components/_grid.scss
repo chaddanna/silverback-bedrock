@@ -32,17 +32,32 @@
   &.col-3 {
     width: 30%;
     margin: 0 1.5%;
+    @include respond-to(handhelds) {
+      width: 100%;
+      padding-top: 40px;
+    }
 
     &.no-gutter {
       width: 33.33%;
       float: left;
       margin: 0;
+      @include respond-to(handhelds) {
+        width: 100%;
+        padding-top: 0;
+      }
+      @include respond-to(medium-screens) {
+        width: 100%;
+      }
     }
   }
 
   &.col-2 {
     width: 45%;
     margin: 0 2.5%;
+    @include respond-to(handhelds) {
+      width: 100%;
+      padding-top: 40px;
+    }
 
     &.no-gutter {
       width: 50%;
