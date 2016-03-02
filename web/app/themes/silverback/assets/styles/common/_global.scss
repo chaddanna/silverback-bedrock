@@ -1,10 +1,26 @@
+$break-small: 720px;
+$break-medium: 880px;
+$break-large: 1112px;
+
+@mixin respond-to($media) {
+ @if $media == handhelds {
+   @media only screen and (max-width: $break-small) { @content; }
+ }
+ @else if $media == medium-screens {
+   @media only screen and (max-width: $break-medium) { @content; }
+ }
+ @else if $media == wide-screens {
+   @media only screen and (max-width: $break-large) { @content; }
+ }
+}
+
 :root {
   font-size: 16px;
-  @include respond-to(handhelds) {
-    font-size: 12px;
-  }
   @include respond-to(medium-screens) {
     font-size: 14px;
+  }
+  @include respond-to(handhelds) {
+    font-size: 12px;
   }
 }
 
@@ -63,20 +79,4 @@ figure {
   @include respond-to(medium-screens) {
     display: inline-block;
   }
-}
-
-$break-small: 720px;
-$break-medium: 880px;
-$break-large: 1112px;
-
-@mixin respond-to($media) {
- @if $media == handhelds {
-   @media only screen and (max-width: $break-small) { @content; }
- }
- @else if $media == medium-screens {
-   @media only screen and (max-width: $break-medium) { @content; }
- }
- @else if $media == wide-screens {
-   @media only screen and (max-width: $break-large) { @content; }
- }
 }

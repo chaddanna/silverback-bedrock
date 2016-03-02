@@ -29,6 +29,12 @@
     transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
   }
 
+  img {
+    @include respond-to(medium-screens) {
+      padding: 10px;
+    }
+  }
+
   .menu-btn {
     position: absolute;
     padding: 0.875rem 0.625rem;
@@ -67,7 +73,6 @@
     -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
     transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
     @include respond-to(medium-screens) {
-      top: 0;
       background: rgb(54, 61, 102);
       position: fixed;
       visibility: hidden;
@@ -80,6 +85,13 @@
       -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
       -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
       transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    }
+
+    &.active{
+      @include respond-to(medium-screens) {
+        visibility: visible;
+        opacity: 1;
+      }
     }
 
     a {
